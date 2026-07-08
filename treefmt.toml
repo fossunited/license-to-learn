@@ -1,0 +1,12 @@
+# One-command formatting. Run: treefmt
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+# NB: no *.html - Zola template uses Tera ({% %}); prettier would mangle them.
+includes = ["*.css", "*.md", "*.json", "*.yaml", "*.yml"]
+excludes = ["public/**", "notes/**", "data/*.csv"]
+
+[formatter.taplo]
+command = "taplo"
+options = ["format"]
+includes = ["*.toml"]
