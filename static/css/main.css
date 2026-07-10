@@ -402,6 +402,7 @@ main {
     color: var(--heading);
 
     & strong {
+      color: var(--bad);
       font-weight: 700;
     }
   }

@@ -224,17 +224,8 @@
     box.append(svg, tip, legend);
   };
 
-  // Per-institute cards share one domain so magnitude is comparable.
-  let sharedMax = 0;
-  document.querySelectorAll(".spend-cards .linechart").forEach((b) => {
-    (b.dataset.values || "").split(",").forEach((v) => {
-      const n = num(v);
-      if (n > sharedMax) sharedMax = n;
-    });
-  });
-  document.querySelectorAll(".linechart").forEach((box) => {
-    draw(box, box.closest(".spend-cards") ? sharedMax : null);
-  });
+  // Each card scales to its own max, like a normal standalone chart.
+  document.querySelectorAll(".linechart").forEach((box) => draw(box, null));
   document.querySelectorAll(".multichart").forEach(drawMulti);
 
   // Format any [data-inr] element as Indian-grouped rupees (card totals).
