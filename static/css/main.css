@@ -765,7 +765,8 @@ main {
 .status--received {
   color: var(--ok);
 }
-.status--no-response {
+.status--no-response,
+.status--did-not-respond {
   color: var(--bad);
 }
 .status--pending {
