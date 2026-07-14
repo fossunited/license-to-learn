@@ -46,7 +46,7 @@
       }
     },
     "response": {
-      "type": "string",
+      "type": ["string", "null"],
       "x-display": {
         "label": "Response ref",
         "type": "link",
