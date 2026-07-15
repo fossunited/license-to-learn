@@ -85,11 +85,11 @@
     const tools = num(btn.dataset.tools);
 
     const n = vals.length;
-    const mean = vals.reduce((a, b) => a + b, 0) / n;
+    const reported = vals.filter(v => v > 0).length;
+    const mean = reported > 0 ? vals.reduce((a, b) => a + b, 0) / reported : 0;
     const maxV = Math.max(...vals), minV = Math.min(...vals);
     const maxYr = YEARS[vals.indexOf(maxV)] || "";
     const minYr = YEARS[vals.indexOf(minV)] || "";
-    const reported = vals.filter((v) => v > 0).length;
 
     pop.innerHTML = `<dl>
       ${row("5-year total", withShort(total))}
